@@ -7,15 +7,16 @@ import { useLoader } from "@react-three/fiber";
 const Gear = (props) => {
   const ref = React.useRef();
   useFrame(() => {
-    ref.current.rotation.x += 0.01;
-    ref.current.rotation.y += 0.01;
-    ref.current.rotation.z += 0.01;
+    // ref.current.rotation.x += 0.01;
+    // ref.current.rotation.y += 0.01;
+    // ref.current.rotation.z += 0.01;
+    ref.current.rotation.y=ref.current.rotation.x
   });
 
   const obj = useLoader(OBJLoader, "./gear.obj");
 
   return (
-    <primitive ref={ref} position={props.position} object={obj} scale={0.05} />
+    <primitive ref={ref}  position={props.position} object={obj}  scale={0.05} />
   );
 };
 const Line = (props) => {
@@ -76,15 +77,19 @@ function App() {
           Surface
         </button>
       </div>
+      {
+        line && 
+        <div className="line-container">
+          <img src="./gear-line.svg" alt="" />
+        </div>
+      }
       <div className="canvas">
         <Canvas camera={{ position: [10, 10, 2], fov: 65 }}>
-          <pointLight position={[1, 3, 4]} intensity={0.4} color="white" />
-          <pointLight position={[3, 3, 2]} intensity={0.4} color="white" />
-          <pointLight position={[0, 3, 0]} intensity={0.4} color="white" />
+          <pointLight position={[0, 4, 0]} intensity={0.4} color="white" />
           <Gear position={gear ? [0, 0, 0] : [1000, 1000, 1000]} />
-          <Line position={line ? [0, 0, 0] : [1000, 1000, 1000]} />
+          {/* <Line position={line ? [0, 0, 0] : [1000, 1000, 1000]} /> */}
           <Surface position={surface ? [0, 0, 0] : [1000, 1000, 1000]} />
-          <OrbitControls />
+          <OrbitControls  />
           {/* <Environment preset="sunset" background /> */}
         </Canvas>
       </div>
