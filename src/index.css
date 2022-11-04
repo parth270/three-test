@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.canvas{
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  z-index: 0;
+}
+
+.button-container{
+  width: 20%;
+  min-height: 40px;
+  display: flex;
+  z-index: 1;
+  position: absolute;
+  top: 30px;
+  right: 5%;
+  justify-content: space-between;
+}
+
+.button-container button{
+  height: 40px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  background-color: #000;
+  border-radius: 4px;
+}
