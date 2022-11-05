@@ -25,7 +25,9 @@ const Line = (props) => {
   const colorMap = useLoader(THREE.TextureLoader, img1);
   const ref = React.useRef();
   useFrame(() => {
+    ref.current.rotation.x += 0.01;
     ref.current.rotation.y += 0.01;
+    ref.current.rotation.z += 0.01;
   });
 
   return (
@@ -44,7 +46,9 @@ const Surface = (props) => {
   const colorMap = useLoader(THREE.TextureLoader, img2);
   const ref = React.useRef();
   useFrame(() => {
+    ref.current.rotation.x += 0.01;
     ref.current.rotation.y += 0.01;
+    ref.current.rotation.z += 0.01;
   });
 
   return (
@@ -69,6 +73,7 @@ function App() {
     <>
       <div className="button-container">
         <button
+
           style={{
             backgroundColor: gear ? "#ccc" : "#000",
             borderColor: gear ? "#ccc" : "#000",
