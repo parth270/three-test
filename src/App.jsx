@@ -15,7 +15,7 @@ const Gear = (props) => {
     ref.current.rotation.z += 0.01;
   });
 
-  const obj = useLoader(OBJLoader, "./gear.obj");
+  const obj = useLoader(OBJLoader, "./line.obj");
 
   return (
     <primitive ref={ref} position={props.position} object={obj} scale={0.05} />
