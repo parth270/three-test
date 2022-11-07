@@ -18,7 +18,7 @@ const Gear = (props) => {
   const obj = useLoader(OBJLoader, "./line.obj");
 
   return (
-    <primitive ref={ref} position={props.position} object={obj} scale={0.05} />
+    <primitive ref={ref} position={props.position} object={obj} scale={0.02} />
   );
 };
 const Line = (props) => {
