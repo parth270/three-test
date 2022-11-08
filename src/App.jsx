@@ -7,7 +7,7 @@ import img1 from "./gear-line.jpg";
 import img2 from "./surface-gear.jpeg";
 import Gear from "./components/solid/Solid";
 import Line from "./components/line/Line";
-import Surface from './components/Surface/Surface';
+import Fucker from './components/Fucker/Fucker';
 
 function App() {
   const [gear, setGear] = React.useState(true);
@@ -71,7 +71,7 @@ function App() {
           <Suspense fallback={null}>
             <Line position={line ? [0, 0, 0] : [1000, 1000, 1000]} />
           </Suspense>
-          <Surface position={surface ? [0, 0, 0] : [1000, 1000, 1000]} />
+          <Fucker position={surface ? [0, 0, 0] : [1000, 1000, 1000]} />
           <OrbitControls />
           {/* <Environment preset="sunset" background /> */}
         </Canvas>

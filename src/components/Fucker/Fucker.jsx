@@ -164,7 +164,7 @@ const Squares = () => {
   );
 };
 
-const Surface = (props) => {
+const Fucker = (props) => {
   const ref = React.useRef();
   useFrame(() => {
     //   ref.current.rotation.x += 0.01;
@@ -185,4 +185,4 @@ const Surface = (props) => {
   );
 };
 
-export default Surface;
+export default Fucker;
