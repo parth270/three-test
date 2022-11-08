@@ -1,26 +1,12 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import { Environment, OrbitControls, useTexture } from "@react-three/drei";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 import img1 from "./gear-line.jpg";
 import img2 from "./surface-gear.jpeg";
+import Gear from "./components/solid/Solid";
 
-const Gear = (props) => {
-  const ref = React.useRef();
-  useFrame(() => {
-    ref.current.rotation.x += 0.01;
-    ref.current.rotation.y += 0.01;
-    ref.current.rotation.z += 0.01;
-  });
-
-  const obj = useLoader(OBJLoader, "./line.obj");
-
-  return (
-    <primitive ref={ref} position={props.position} object={obj} scale={0.02} />
-  );
-};
 const Line = (props) => {
   const colorMap = useLoader(THREE.TextureLoader, img1);
   const ref = React.useRef();
@@ -31,36 +17,36 @@ const Line = (props) => {
   });
 
   return (
-      <mesh position={props.position} ref={ref} >
-        <planeBufferGeometry args={[10, 10]} attach="geometry" />
-        <meshStandardMaterial
-          map={colorMap}
-          attach="material"
-          side={THREE.DoubleSide}
-          color="white"
-        />
-      </mesh>
+    <mesh position={props.position} ref={ref}>
+      <planeBufferGeometry args={[10, 10]} attach="geometry" />
+      <meshStandardMaterial
+        map={colorMap}
+        attach="material"
+        side={THREE.DoubleSide}
+        color="white"
+      />
+    </mesh>
   );
 };
 const Surface = (props) => {
   const colorMap = useLoader(THREE.TextureLoader, img2);
   const ref = React.useRef();
-  useFrame(() => {
-    ref.current.rotation.x += 0.01;
-    ref.current.rotation.y += 0.01;
-    ref.current.rotation.z += 0.01;
-  });
+  // useFrame(() => {
+  //   ref.current.rotation.x += 0.01;
+  //   ref.current.rotation.y += 0.01;
+  //   ref.current.rotation.z += 0.01;
+  // });
 
   return (
-      <mesh position={props.position} ref={ref} >
-        <planeBufferGeometry args={[10, 10]} attach="geometry" />
-        <meshStandardMaterial
-          map={colorMap}
-          attach="material"
-          side={THREE.DoubleSide}
-          color="white"
-        />
-      </mesh>
+    <mesh position={props.position} ref={ref}>
+      <planeBufferGeometry args={[10, 10]} attach="geometry" />
+      <meshStandardMaterial
+        map={colorMap}
+        attach="material"
+        side={THREE.DoubleSide}
+        color="white"
+      />
+    </mesh>
   );
 };
 
@@ -73,7 +59,6 @@ function App() {
     <>
       <div className="button-container">
         <button
-
           style={{
             backgroundColor: gear ? "#ccc" : "#000",
             borderColor: gear ? "#ccc" : "#000",
@@ -120,7 +105,7 @@ function App() {
         </div>
       } */}
       <div className="canvas">
-        <Canvas camera={{ position: [0, 0, 10], fov: 65 }} colorManagement>
+        <Canvas camera={{ position: [0, 0, 10], fov: 65 }} >
           <pointLight position={[0, 4, 0]} intensity={0.4} color="white" />
           <ambientLight intensity={0.7} />
           <Gear position={gear ? [0, 0, 0] : [1000, 1000, 1000]} />
