@@ -48,9 +48,10 @@ const InnerLine = () => {
 };
 const SingleLine = (props) => {
   const ref = React.useRef();
+  const arg = arg1-0.003
   const points = [];
-  points.push(new THREE.Vector3(0, arg1, 0));
-  points.push(new THREE.Vector3(0, -arg1, 0));
+  points.push(new THREE.Vector3(0, arg, 0));
+  points.push(new THREE.Vector3(0, -arg, 0));
   const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
   useLayoutEffect(() => {
     ref.current.lookAt(0, 0, 0);
@@ -72,11 +73,12 @@ const SingleLine = (props) => {
 
 const UpperLine = (props) => {
   const ref = React.useRef();
+  const arg = arg1
   const points = [];
-  points.push(new THREE.Vector3(0, arg1, 0));
-  points.push(new THREE.Vector3(0, arg1, -0.624));
-  points.push(new THREE.Vector3(0, -arg1, -0.624));
-  points.push(new THREE.Vector3(0, -arg1, 0));
+  points.push(new THREE.Vector3(0, arg, 0));
+  points.push(new THREE.Vector3(0, arg, -0.624));
+  points.push(new THREE.Vector3(0, -arg, -0.624));
+  points.push(new THREE.Vector3(0, -arg, 0));
   const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
   useLayoutEffect(() => {
     ref.current.lookAt(0, 0, 0);
@@ -133,7 +135,7 @@ const Square = (props) => {
 
   return (
     <mesh ref={ref} position={props.position}>
-      <planeGeometry args={[arg1*2,arg1*2]} />
+      <boxGeometry args={[0.00001,arg1*2,arg1*3]} />
       <meshStandardMaterial side={THREE.DoubleSide} color="#ccc" />
     </mesh>
   );
