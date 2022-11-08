@@ -7,27 +7,7 @@ import img1 from "./gear-line.jpg";
 import img2 from "./surface-gear.jpeg";
 import Gear from "./components/solid/Solid";
 import Line from "./components/line/Line";
-const Surface = (props) => {
-  const colorMap = useLoader(THREE.TextureLoader, img2);
-  const ref = React.useRef();
-  // useFrame(() => {
-  //   ref.current.rotation.x += 0.01;
-  //   ref.current.rotation.y += 0.01;
-  //   ref.current.rotation.z += 0.01;
-  // });
-
-  return (
-    <mesh position={props.position} ref={ref}>
-      <planeBufferGeometry args={[10, 10]} attach="geometry" />
-      <meshStandardMaterial
-        map={colorMap}
-        attach="material"
-        side={THREE.DoubleSide}
-        color="white"
-      />
-    </mesh>
-  );
-};
+import Surface from './components/surface/surface'
 
 function App() {
   const [gear, setGear] = React.useState(true);
