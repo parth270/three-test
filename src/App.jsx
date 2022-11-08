@@ -7,7 +7,7 @@ import img1 from "./gear-line.jpg";
 import img2 from "./surface-gear.jpeg";
 import Gear from "./components/solid/Solid";
 import Line from "./components/line/Line";
-import Surface from './components/surface/surface'
+import Surface from './components/surface/Surface'
 
 function App() {
   const [gear, setGear] = React.useState(true);
