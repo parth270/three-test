@@ -51,7 +51,7 @@ const WallArrayIn = [
   { position: position(11,rad2), id: 10 },
   { position: position(12,rad2), id:11 },
 ];
-const cuberad =1.8975;
+const cuberad =1.7975;
 const cubeArr = [
   { position: positionCube(1,cuberad), id: 0 },
   { position: positionCube(2,cuberad), id: 1 },
@@ -124,7 +124,7 @@ const Gear = (props) => {
           <Cube
           key={item.id}
           id={item.id}
-          args={[0.60, 0.829,0.85]}
+          args={[0.60, 0.829,0.75]}
           position={item.position}
           />
         )
