@@ -78,22 +78,22 @@ const OuterLine = (props) => {
   );
 };
 
-const Liness = () => {
-  const position = (i) => {
-    const radius = 1.548;
+// const Liness = () => {
+//   const position = (i) => {
+//     const radius = 1.548;
 
-    return [
-      Math.cos((Math.PI / 6) * i) * radius,
-      Math.sin((Math.PI / 6) * i) * radius,
-      0,
-    ];
-  };
-  return (
-    <>
-      <OuterLine position={[0,0,0]}  />
-    </>
-  );
-};
+//     return [
+//       Math.cos((Math.PI / 6) * i) * radius,
+//       Math.sin((Math.PI / 6) * i) * radius,
+//       0,
+//     ];
+//   };
+//   return (
+//     <>
+//       <OuterLine position={[0,0,0]}  />
+//     </>
+//   );
+// };
 
 const Line = (props) => {
   const ref = React.useRef();
@@ -106,7 +106,7 @@ const Line = (props) => {
   return (
     <group position={props.position} ref={ref}>
       <InnerLine />
-      <Liness />
+      <OuterLine />
     </group>
   );
 };
