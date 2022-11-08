@@ -102,7 +102,7 @@ const Gear = (props) => {
           <Wall
             key={item.id}
             id={item.id}
-            args={[0.61, 0.829]}
+            args={[0.6, 0.829]}
             position={item.position}
             rotation={item.rotation}
           />
