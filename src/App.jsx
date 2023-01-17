@@ -1,6 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import { Environment, OrbitControls, useTexture } from "@react-three/drei";
+import {  XR, ARButton, Controllers } from '@react-three/xr'
 import { useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 import img1 from "./gear-line.jpg";
@@ -64,7 +65,10 @@ function App() {
         </div>
       } */}
       <div className="canvas">
+      <ARButton />
         <Canvas camera={{ position: [0, 0, 10], fov: 65 }} >
+        <XR referenceSpace="local">
+
           <pointLight position={[0, 4, 0]} intensity={0.4} color="white" />
           <ambientLight intensity={0.7} />
           <Gear position={gear ? [0, 0, 0] : [1000, 1000, 1000]} />
@@ -73,6 +77,8 @@ function App() {
           </Suspense>
           <Fucker position={surface ? [0, 0, 0] : [1000, 1000, 1000]} />
           <OrbitControls />
+          <Controllers />
+        </XR>
           {/* <Environment preset="sunset" background /> */}
         </Canvas>
       </div>
