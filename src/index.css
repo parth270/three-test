@@ -57,3 +57,21 @@ code {
   height: 500px;
 
 }
+
+.form{
+  width:200px;
+  height: 500px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #5a5a5a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form input{
+  width: 200px;
+  height: 20px;
+}
