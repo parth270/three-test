@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <div className="button-container">
+      {/* <div className="button-container">
         <button
           style={{
             backgroundColor: gear ? "#ccc" : "#000",
@@ -57,7 +57,7 @@ function App() {
         >
           Surface
         </button>
-      </div>
+      </div> */}
       {/* {
         line && 
         <div className="line-container">
@@ -65,7 +65,7 @@ function App() {
         </div>
       } */}
       <div className="canvas">
-        <Canvas camera={{ position: [0, 0, 0], fov: 65 }} dpr={window.devicePixelRatio} 
+        <Canvas camera={{ position: [10, 0, 0], fov: 75 }} dpr={window.devicePixelRatio} 
           gl={{ antialias: false }}
           onCreated={({ gl }) => {
            gl.toneMapping = THREE.ACESFilmicToneMapping;
@@ -74,13 +74,13 @@ function App() {
         >
             <pointLight position={[0, 4, 0]} intensity={0.4} color="white" />
             <ambientLight intensity={0.7} />
-            <Gear position={false ? [0, 0, 0] : [1000, 1000, 1000]} />
+            {/* <Gear position={false ? [0, 0, 0] : [1000, 1000, 1000]} />
             <Suspense fallback={null}>
               <Line position={false ? [0, 0, 0] : [1000, 1000, 1000]} />
-            </Suspense>
+            </Suspense> */}
             <Para/>
-            <Fucker position={surface ? [0, 0, 0] : [1000, 1000, 1000]} />
-            <OrbitControls  />
+            {/* <Fucker position={surface ? [0, 0, 0] : [1000, 1000, 1000]} /> */}
+            <OrbitControls maxDistance={500}  />
           {/* <Environment preset="sunset" background /> */}
         </Canvas>
       </div>
