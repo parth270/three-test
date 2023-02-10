@@ -2,6 +2,8 @@ import { useThree } from "@react-three/fiber";
 import React from "react";
 import * as THREE from "three";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
+import Move from "./Move";
+import Ring from "./Ring";
 const Para = () => {
   const three = useThree();
   React.useEffect(() => {
@@ -20,10 +22,17 @@ const Para = () => {
     const material = new THREE.MeshBasicMaterial({ map: texture });
 
     const mesh = new THREE.Mesh(geometry, material);
-
+    mesh.name="sphere"
     scene.add(mesh);
   });
-  return <></>;
+  
+  return (
+    <>
+      <Move/>
+      <Ring position={{ x: 2, y: -100, z: -100 }} name="f1" />
+      <Ring position={{ x: -150, y: -100, z: -200 }} name="f2" />
+    </>
+  );
 };
 
 export default Para;

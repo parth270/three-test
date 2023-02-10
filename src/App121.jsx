@@ -80,7 +80,7 @@ function App() {
             </Suspense> */}
             <Para/>
             {/* <Fucker position={surface ? [0, 0, 0] : [1000, 1000, 1000]} /> */}
-            <OrbitControls maxDistance={500}  />
+            <OrbitControls maxDistance={250} minDistance={50} />
           {/* <Environment preset="sunset" background /> */}
         </Canvas>
       </div>

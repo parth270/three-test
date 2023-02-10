@@ -13,6 +13,22 @@ code {
     monospace;
 }
 
+.cont{
+  position:absolute;
+  top: 10px;
+  left: 10px;
+  width: 200px;
+  padding: 30px;
+  height: 70px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.cont h1{
+  margin: 0;
+}
+
 .canvas{
   width: 100%;
   position: absolute;
